@@ -1,0 +1,26 @@
+1. wget https://cloud-images.ubuntu.com/minimal/releases/jammy/release/ubuntu-22.04-minimal-cloudimg-amd64.img
+
+2. Set vga console or u want see anything on screen when it boots (900 is VM ID):
+qm set 900 --serial0 socket --vga serial0
+
+3.  Rename image - important change extension:
+mv ubuntu-22.04-minimal-cloudimg-amd64.img ubuntu-22.04-min.qcow2
+
+4. Resize the image:
+qemu-img resize ubuntu-22.04-min.qcow2 15G
+
+5. Import image into ProxMox:
+sudo qm importdisk 900 ubuntu-22.04-min.qcow2 storage01
+
+6.  Go to Web Gui > Hardware > Add > CloudInit Drive > Select Storage 
+
+7.  CloudInit > Add: Password, DNS Servers, SSH public key, IP Config
+
+8.  Hardware > Notice Unused Disk > Edit > Add
+
+9.  Option > Boot Order > Check in Hard Drive > Drag to boot Position
+
+10. Option > Start at Boot > Check
+
+11. Right click VM > Conver to Template !!! BE SURE everything set no way to revert back.
+
