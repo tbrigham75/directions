@@ -19,9 +19,9 @@ sudo qm set 900 --serial0 socket --vga serial0
 
 7.  Hardware > Notice Unused Disk > Edit > Add
 
-8.  CloudInit > Add: Password, DNS Servers, SSH public key, IP Config
+8.  CloudInit > Add: User, Password, DNS Servers, SSH public key, IP Config
 
-9.  Option > Boot Order > Check in Hard Drive > Drag to boot Position
+9.  Option > Boot Order > Put a Check in Hard Drive box > Drag to boot Position > Uncheck Net0
 
 10. Option > Start at Boot > Check
 
