@@ -1,10 +1,10 @@
-1.  Install K3sUp:
+1.  Followed directions from:
+https://codeberg.org/onasaft/k3sup
+
+2.  Install K3sUp:
 curl -sLS https://get.k3sup.dev | sh
 sudo install k3sup /usr/local/bin/
 k3sup --help
-
-2.  Followed directions from:
-https://codeberg.org/onasaft/k3sup
 
 3. Setup Vars:
 export SERVER1=192.168.2.101
