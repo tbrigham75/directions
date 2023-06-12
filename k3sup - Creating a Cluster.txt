@@ -25,7 +25,7 @@ kubectl get node -o wide
 sudo cat /var/lib/rancher/k3s/server/node-token
 
 7.  Set the token Var from the cat-ed node-token above:
-export TOKEN=K101a4939e097a8f2daf69ba341ded1cef46d0152aed0710230b0a566c25e96bf54::server:517773881e5c4d0d20cb3e560a8d0dc4
+export TOKEN=FillInTokenFromAbove
 
 8.  Install the second server:
 k3sup join --user tom --server-user tom --server-ip $SERVER1 --ip $SERVER2 --server
