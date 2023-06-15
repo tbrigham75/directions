@@ -1,9 +1,0 @@
-Partial directions taken from:  https://itnext.io/the-ultimate-guide-to-building-your-personal-k3s-cluster-bf2643f31dd3
-
-1.  kubectl apply -f https://raw.githubusercontent.com/longhorn/longhorn/v1.4.0/deploy/longhorn.yaml
-
-2.  Check everything went smooth
-kubectl -n longhorn-system get pod
-
-3.  Check out the longhorn service
-kubectl -n longhorn-system get svc
