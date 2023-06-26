@@ -1,0 +1,45 @@
+https://www.youtube.com/watch?v=M18yDGAd9TU&t=1186s
+
+https://www.virtualizationhowto.com/2018/04/configure-ansible-windows-server-kerberos-authentication-in-ubuntu/
+
+1.  Install Ansible along with other dependencies:
+sudo apt-get install gcc python-dev libkrb5-dev -y
+
+sudo upgrade
+
+sudo apt-get install python3-pip -y
+
+sudo pip3 install --upgrade pip
+
+sudo pip3 install --upgrade virtualenv
+
+pip3 install pywinrm
+
+sudo apt install krb5-user -y
+
+sudo apt-get install python3-kerberos -y
+
+sudo pip3 install ansible
+
+2.  Edit:  /etc/krb5.conf with, modify to your domain info (Notice CAPS for Domain info):
+
+[logging]
+ default = FILE:/var/log/krb5libs.log
+ kdc = FILE:/var/log/krb5kdc.log
+ admin_server = FILE:/var/log/kadmind.log
+
+[libdefaults]
+ default_realm = MYDOMAIN.LOCAL
+ allow_weak_crypto = true
+ dns_lookup_realm = false
+ dns_lookup_kdc = false
+ rdns = false
+ ticket_lifetime = 24h
+ renew_lifetime = 7d
+ forwardable = true
+
+[realms]
+ MYDOMAIN.LOCAL = {
+  kdc = dc1.mydomain.local
+  admin_server = dc1.mydomain.local
+ }
