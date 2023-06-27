@@ -43,3 +43,67 @@ sudo pip3 install ansible
   kdc = dc1.mydomain.local
   admin_server = dc1.mydomain.local
  }
+
+3.  kinit admin@CLOUD.LOCAL
+klist – list Kerberos tickets
+kdestroy -A – Removes existing Kerberos tickets
+
+4. Create group_vars/windows.yml, ansible.cfg, and inventory.ini:
+	
+group_vars/windows.yml
+ansible_user: Admin@HOME.ORG
+ansible_connection: winrm
+ansible_port: 5985
+ansible_winrm_transport: kerberos
+ansible_winrm_cert_validation: ignore
+ansible_become: true
+
+ansible.cfg
+[defaults]
+inventory = inventory/inventory.ini
+
+inventory.ini
+[windows]
+2022winsrv01.HOME.ORG
+
+5.  Create main.yml for a task:
+
+---
+name: "Chocolatey"
+hosts: windows
+tasks:
+  - name: Install Google Chrome
+  win_chocolatey:
+    name: googlechrome
+    state: present
+    ignore_checksums: yes
+
+6.  Test connection to windows servers:
+ansible windows -i inventory/inventory.ini -m win_ping -v
+
+https://www.devopsschool.com/tutorial/ansible/ansible-windows-remote-setup.html
+7.  Run this script within PowerShell ISE:
+$url = "https://raw.githubusercontent.com/jborean93/ansible-windows/master/scripts/Upgrade-PowerShell.ps1"
+$file = "$env:temp\Upgrade-PowerShell.ps1"
+$username = "Administrator"
+$password = "P@ssw0rd"
+
+(New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file)
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
+
+# version can be 3.0, 4.0 or 5.1
+&$file -Version 5.1 -Username $username -Password $password -Verbose
+
+$reg_winlogon_path = "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Winlogon"
+Set-ItemProperty -Path $reg_winlogon_path -Name AutoAdminLogon -Value 0
+Remove-ItemProperty -Path $reg_winlogon_path -Name DefaultUserName -ErrorAction SilentlyContinue
+Remove-ItemProperty -Path $reg_winlogon_path -Name DefaultPassword -ErrorAction SilentlyContinue
+
+$url = "https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1"
+$file = "$env:temp\ConfigureRemotingForAnsible.ps1"
+
+(New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file)
+
+powershell.exe -ExecutionPolicy ByPass -File $file
+
+
