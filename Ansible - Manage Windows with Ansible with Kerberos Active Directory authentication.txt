@@ -21,6 +21,12 @@ sudo apt-get install python3-kerberos -y
 
 sudo pip3 install ansible
 
+NOTE:  Had to add this:
+
+sudo apt-get install python3-dev 
+
+pip3 install pywinrm[kerberos]
+
 2.  Edit:  /etc/krb5.conf with, modify to your domain info (Notice CAPS for Domain info):
 
 [logging]
@@ -55,8 +61,7 @@ ansible_user: Admin@HOME.ORG
 ansible_connection: winrm
 ansible_port: 5985
 ansible_winrm_transport: kerberos
-ansible_winrm_cert_validation: ignore
-ansible_become: true
+#ansible_winrm_cert_validation: ignore
 
 ansible.cfg
 [defaults]
@@ -82,6 +87,7 @@ tasks:
 ansible windows -i inventory/inventory.ini -m win_ping -v
 
 https://www.devopsschool.com/tutorial/ansible/ansible-windows-remote-setup.html
+
 7.  Run this script within PowerShell ISE:
 $url = "https://raw.githubusercontent.com/jborean93/ansible-windows/master/scripts/Upgrade-PowerShell.ps1"
 $file = "$env:temp\Upgrade-PowerShell.ps1"
@@ -105,5 +111,10 @@ $file = "$env:temp\ConfigureRemotingForAnsible.ps1"
 (New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file)
 
 powershell.exe -ExecutionPolicy ByPass -File $file
+
+8.  How to setup GPO for WinRM:
+https://support.auvik.com/hc/en-us/articles/204424994-How-to-enable-WinRM-with-domain-controller-Group-Policy-for-WMI-monitoring
+
+
 
 
