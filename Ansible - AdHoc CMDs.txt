@@ -1,0 +1,4 @@
+CMD	GROUP	CMD	USER
+ansible linux -m ping -u username
+
+ansible servers -a "free h" -u username
