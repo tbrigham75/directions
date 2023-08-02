@@ -1,0 +1,5 @@
+1.  vault version
+2.  vault -h #Help
+3.  vault read -h #Note:  gives examples
+4.  export VAULT_ADDR='http://IP2Server:8200' 
+5.  export VAULT_TOKEN='setPassHere'
