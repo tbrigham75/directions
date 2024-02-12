@@ -9,9 +9,9 @@ sudo apt upgrade
 
 sudo apt-get install python3-pip -y
 
-sudo pip3 install --upgrade pip
+pip3 install --upgrade pip
 
-sudo pip3 install --upgrade virtualenv
+pip3 install --upgrade virtualenv
 
 pip3 install pywinrm
 
@@ -19,11 +19,17 @@ sudo apt install krb5-user -y
 
 sudo apt-get install python3-kerberos -y
 
-sudo pip3 install ansible
+pip3 install ansible
 
 NOTE:  Had to add this:
 
-sudo apt-get install python3-dev 
+pip install --upgrade pip setuptools wheel
+
+sudo apt install libcairo2 libcairo2-dev pkg-config python3-dev
+
+pip3 install pycairo
+
+sudo apt-get install gcc python2-dev libkrb5-dev
 
 pip3 install pywinrm[kerberos]
 

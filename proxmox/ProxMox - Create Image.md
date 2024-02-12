@@ -1,10 +1,10 @@
 1. wget https://cloud-images.ubuntu.com/minimal/releases/jammy/release/ubuntu-22.04-minimal-cloudimg-amd64.img
 
 2.  Rename image - important change extension:
-mv ubuntu-22.04-minimal-cloudimg-amd64.img ubuntu-22.04-min-8gb.qcow2
+mv ubuntu-22.04-minimal-cloudimg-amd64.img ubuntu-22.04-min-15gb.qcow2
 
 3. Resize the image:
-qemu-img resize ubuntu-22.04-min-8gb.qcow2 15G
+qemu-img resize ubuntu-22.04-min-15gb.qcow2 15G
 
 4. Go to Web Gui > Create VM > VM ID: 900 > Name: ubuntu-22.04-min-8gb > Start at boot checked > OS: Don't use any media >
 Qemu Agent checked > Disks click trash can > Next to Confim and Finish
