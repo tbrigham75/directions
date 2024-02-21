@@ -1,0 +1,7 @@
+[defaults]
+interpreter_python=auto_silent
+host_key_checking=False
+inventory = inventory/inventory.ini
+remote_user = remote_user
+become_user = remote_user
+vault_password_file = ~/.ansible/vault_pass.txt
