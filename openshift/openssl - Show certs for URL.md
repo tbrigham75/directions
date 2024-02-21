@@ -1,0 +1,1 @@
+openssl s_client -connect openshiftartifactoryha-nginx-jfrog.apps.dev.org:443 -servername openshiftartifactoryha-nginx-jfrog.apps.dev.org -verify 5 -showcerts

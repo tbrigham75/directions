@@ -1,0 +1,1 @@
+Network Polcies are a default allow rule.  If you set a policy here you have to explicitly set all policies required.  If one is set it starts denying, unless explicitly set.

@@ -1,0 +1,1 @@
+RUN rpm -e --nodeps platform-python-pip python3-setuptools-wheel platform-python-setuptools platform-python python3-libs platform-python-pip 

@@ -1,0 +1,1 @@
+In Web Console Don't forget to click the down arrow for the normal container log and look for the INIT CONTAINERS logs

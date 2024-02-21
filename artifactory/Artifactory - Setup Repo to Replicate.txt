@@ -1,0 +1,25 @@
+Setup one Artifactory server to clone from another:
+
+1. Logon to your artifactory server:
+https://artifacts.dev.org
+
+2.  Gears > Repositories > Repositories > Remote > Add Repositories
+
+3.  Logon to other Artifactory server you want to clone from:
+https://artifacts.company.org
+
+4. Artifactory > Artifacts > Pick one, example:  Conda
+
+5. Collect required info:
+Repository Key:  Find under Included Repositories a repo, example:  conda-main-remote
+URL:  URL to file:
+
+6.  Back under:  https://artifacts.dev.org fill in Repoistory name and URL, type username and password, and save
+
+7.  Under 3 tabs across top:  Basic, Advanced, Replications select:  Replications 
+
+8.  Enable Active Replication of This Repository
+Cron Expression: 0 0 1 * * ? and Test / Save
+
+9.  Back under:  Gears > Repositories > Repositories > Remote
+Look for Replications Play button to run rep

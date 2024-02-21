@@ -7,10 +7,10 @@ sudo install k3sup /usr/local/bin/
 k3sup --help
 
 3. Setup Vars:
-export SERVER1=192.168.2.101
-export SERVER2=192.168.2.102
-export AGENT1=192.168.2.104
-export AGENT2=192.168.2.105
+export SERVER1=192.88.2.101
+export SERVER2=192.88.2.102
+export AGENT1=192.88.2.104
+export AGENT2=192.88.2.105
 export USER=tom
 
 4.  Install the first server:

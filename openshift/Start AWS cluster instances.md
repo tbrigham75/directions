@@ -1,0 +1,1 @@
+aws --profile=node-mfa ec2 describe-instances --filters Name=tag:node,Values=schedule | jq -r '.Reservations[].Instances[].InstanceId' | xargs aws --profile=node-mfa ec2 start-instances --instance-ids

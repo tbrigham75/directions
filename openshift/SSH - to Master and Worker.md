@@ -1,0 +1,1 @@
+ssh -o "IdentitiesOnly=yes" -i .ssh/id_rsa core@10.88.12.16

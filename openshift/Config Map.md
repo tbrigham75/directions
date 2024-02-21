@@ -1,0 +1,1 @@
+If you have a .conf in your container and you want a work around to not storing it in the container that is what Config Maps help with

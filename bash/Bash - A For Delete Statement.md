@@ -1,0 +1,1 @@
+for r in jfrog-nginx jfrog; do oc delete role $r

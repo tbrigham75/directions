@@ -1,0 +1,1 @@
+CRICTL is like Docker or Podman and will take most of the same CMDs

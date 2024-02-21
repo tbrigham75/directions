@@ -1,0 +1,1 @@
+If Quay looks like its stuck crash looping the quay-quay-mirror pods... the SME deleted the clair app pods to fix this... no need to delete the mirror pods

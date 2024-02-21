@@ -1,0 +1,1 @@
+oc get mutatingwebhookconfiguration --template='{{range .items}}{{$n:=.metadata.name}}{{range .webhooks}}{{if eq .clientConfig.service.name "quay-bridge-operator-service"}}{{$n}}{{"\n"}}{{end}}{{end}}{{end}}'

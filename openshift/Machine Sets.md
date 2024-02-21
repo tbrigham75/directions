@@ -1,0 +1,1 @@
+Templates that create Machines.  Machines eventually become Nodes

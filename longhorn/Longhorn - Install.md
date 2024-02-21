@@ -39,7 +39,7 @@ spec:
   entryPoints: 
     - web
   routes:
-  - match: Host(`192.168.2.101`) 
+  - match: Host(`192.88.2.101`) 
     kind: Rule
     services:
     - name: longhorn-frontend
