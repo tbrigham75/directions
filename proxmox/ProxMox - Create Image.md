@@ -27,5 +27,7 @@ sudo qm set 900 --serial0 socket --vga serial0
 
 11. Check that it boots and install any software you want before turning into a Template
 
-12. Right click VM > Conver to Template !!! BE SURE everything set no way to revert back.
+12. Right click VM > Convert to Template !!! BE SURE everything set no way to revert back.
+
+13.  You might want to clone it and turn the clone to a template
 
