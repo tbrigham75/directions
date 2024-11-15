@@ -29,3 +29,5 @@
         local video_link="$1"
         fabric -y "$video_link" --transcript
 4. source ~/.bashrc
+5.  Updates are as simple as:  
+    go install github.com/danielmiessler/fabric@latest
